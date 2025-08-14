@@ -4,7 +4,7 @@ Said JSON file is read by the HTML document which is then outputted in much less
 
 The basic webscraping was done for the most opart by me, AI helped when i came time to translate the python script into a Flask script and a html document.
 
-The embedded cam was dont by me and some others
+The embedded cam was done by me and some of the other web side stuff
 
 some future to dos, have a webscraper look at the MCCS WS instagram page and tell what flag conditions and what they are calling
 
