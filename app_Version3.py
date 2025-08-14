@@ -34,9 +34,9 @@ def fetch_data():
                 elif 270 < wind_direction <= 315: direction_text = "NW"
                 elif 315 < wind_direction <= 360: direction_text = "North"
 
-            output["metar"] = {
-                "receipt_time": current_local_time,
-                "report_time_zulu": data.get("reportTime"),
+            output["North Beach Conditions are as follows \n"] = {
+                "receipt_time": current_local_time \n,
+                "report_time_zulu": data.get("reportTime") \n,
                 "wind_speed_kts": wind_speed,
                 "wind_direction_deg": wind_direction,
                 "wind_direction_text": direction_text,
