@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, render_template
 import requests
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 app = Flask(__name__)
 
@@ -8,7 +8,9 @@ def fetch_data():
     output = {}
 
     # --- METAR Data ---
-    current_local_time = datetime.now().isoformat()
+    tzinfo = timezone(timedelta(hours=-10))
+    current_local_time = datetime.now(tzinfo).strftime("%Y-%m-%d %H:%M:%S")
+    
     metar_url = 'https://aviationweather.gov/api/data/metar?ids=PHNG&format=json'
     try:
         metar_response = requests.get(metar_url, timeout=10)
