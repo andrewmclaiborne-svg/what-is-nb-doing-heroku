@@ -1,4 +1,4 @@
-# what-is-nb-doing-heroku
+# what is North Beach doing, the flask version being delpoyed for use
 the script is oretty straight foward, it pulls the METAR data via an API and the NOAA buoy data via txt file and parses it into a JSON file.
 Said JSON file is read by the HTML document which is then outputted in much less disgusting format.
 
