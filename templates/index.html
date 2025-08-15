@@ -17,6 +17,14 @@
     fetch('/wind_wave_data.json')
       .then(response => response.json())
       .then(data => {
+        // TLDR section
+        let TLDRhtml = '<div class="section"><h2>Tell Me What To Think Please</h2>';
+        if (data.da_answer) {
+          TLDRhtml += `<p>${data.da_answer}</p>`;
+        } else {
+          TLDRhtml += '<p>No decision data available.</p>';
+        }
+        TLDRhtml += '</div>';
         // METAR section
         const metarKey = Object.keys(data).find(k => k.startsWith("North Beach Conditions"));
         const metar = data[metarKey];
@@ -39,7 +47,8 @@
           html += '<p>No METAR data available.</p>';
         }
         html += '</div>';
-        document.getElementById('conditions').innerHTML = html;
+        // Combine both and set once
+        document.getElementById('conditions').innerHTML = TLDRhtml + html;
 
         // BUOY section
         let buoyHtml = '<div class="section"><h2>Buoy Data</h2>';
